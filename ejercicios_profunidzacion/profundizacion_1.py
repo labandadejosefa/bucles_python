@@ -30,10 +30,22 @@ print('Comenzamos a ponernos serios!')
 # inicio = ....
 # fin = ....
 
+inicio = int(input('Ingrese el primer número de la secuencia:\n'))
+fin = int(input('Ingrese el último número de la secuencia:\n'))
+
 # cantidad_numeros ....
+cantidad_numeros = 0
 # sumatoria ....
+sumatoria = 0
 
 # bucle.....
+
+for i in range(min(inicio, fin), max(inicio, fin)+1):
+    cantidad_numeros += 1
+    sumatoria += i
+
+print(f'Cantidad de elementos enteros del intervalo {[min(inicio, fin), max(inicio, fin)]}: {cantidad_numeros}\nSuma de todos los elementos: {sumatoria}\nPromedio de todos los elementos del intervalo: {sumatoria / cantidad_numeros}')
+
 
 # Al terminar el bucle calcular el promedio como:
 # promedio = sumatoria / cantidad_numeros

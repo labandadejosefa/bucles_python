@@ -22,6 +22,10 @@ sumatoria = 0  # Inicializo el contador en 0
 
 # for ... in range(....)
 
+for j in range(min(inicio, fin), max(inicio, fin)+1):
+    sumatoria += j
+print(f'La suma de los enteros entre {min(inicio, fin)} y {max(inicio, fin)}, es {sumatoria}.')
+
 # Imprimir el valor de la sumatoria
 
 print("terminamos!")

@@ -51,6 +51,21 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 
 # Colocar el bucle aqui......
 
+for temp in temp_dataloger:
+    if (temperatura_max is None) or (temp > temperatura_max):
+        temperatura_max = temp
+
+    if (temperatura_min is None) or (temp < temperatura_min):
+        temperatura_min = temp
+
+    temperatura_len = len(temp_dataloger)
+    temperatura_sumatoria += temp
+    temperatura_promedio = temperatura_sumatoria / temperatura_len
+
+print(f'Para máxima y mínima temperatura, "a mano" obtengo:\nTª MÁXIMA: {temperatura_max} ºC y Tº MÍNIMA: {temperatura_min} ºC')  
+print(f'Con métodos max y min:\nTº MÁXIMA: {max(temp_dataloger)} ºC y Tº MÍNIMA: {min(temp_dataloger)} ºC')       
+print(f'Promedio de temperaturas registradas: {round(temperatura_promedio,2)} ºC\nPara suma de todas las temperaturas registradas, "a mano" obtengo:\nSuma total: {round(temperatura_sumatoria,2)} ºC\nCon método sum: {round(sum(temp_dataloger),2)} ºC')
+
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
@@ -83,3 +98,12 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+
+if temperatura_min >= 19 and temperatura_max <= 28:
+    print('El registro corresponde a VERANO')
+elif temperatura_min >= 11 and temperatura_max <= 20:
+    print('El registro corresponde a OTOÑO')
+elif temperatura_min >= 8 and temperatura_max <= 14:
+    print('El registro corresponde a INVIERNO')
+elif temperatura_min >= 10 and temperatura_max <= 24:   
+    print('El registro corresponde a PRIMAVERA')
